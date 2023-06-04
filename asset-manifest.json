@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sshop-homepage/static/css/main.d7a37218.css",
+    "main.js": "/sshop-homepage/static/js/main.b0f98606.js",
+    "static/js/787.28268e96.chunk.js": "/sshop-homepage/static/js/787.28268e96.chunk.js",
+    "index.html": "/sshop-homepage/index.html",
+    "main.d7a37218.css.map": "/sshop-homepage/static/css/main.d7a37218.css.map",
+    "main.b0f98606.js.map": "/sshop-homepage/static/js/main.b0f98606.js.map",
+    "787.28268e96.chunk.js.map": "/sshop-homepage/static/js/787.28268e96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7a37218.css",
+    "static/js/main.b0f98606.js"
+  ]
+}
