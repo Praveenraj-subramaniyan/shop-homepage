@@ -16,7 +16,7 @@ function Home() {
         const loginDataFromCookie = cookieValue
           ? JSON.parse(cookieValue)
           : null;
-        const items = await axios.get("http://localhost:3000/" + "home", {
+        const items = await axios.get("https://shop-home.onrender.com/" + "home", {
           headers: {
             Authorization: `Bearer ${loginDataFromCookie}`,
           },
