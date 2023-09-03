@@ -26,9 +26,7 @@ function Login() {
           });
       }
       else {
-        const expiryDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
-        Cookies.set("shop_login", JSON.stringify(response), {
-          expires: expiryDate,
+        Cookies.set("shop_login", JSON.stringify(response.data), {
           sameSite: "None",
           secure: true,
         });

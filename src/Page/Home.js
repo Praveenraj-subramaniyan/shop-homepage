@@ -12,85 +12,30 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cookieValue = Cookies.get("auth_token");
+        const cookieValue = Cookies.get("shop_login");
         const loginDataFromCookie = cookieValue
           ? JSON.parse(cookieValue)
           : null;
         const items = await axios.get("http://localhost:3000/" + "home", {
-            headers: {
-              Authorization: `Bearer ${loginDataFromCookie}`,
-            },
-          });
-        if (items === "login") {
-          alert("Session Expired");
+          headers: {
+            Authorization: `Bearer ${loginDataFromCookie}`,
+          },
+        });
+        if (items === false) {
+          alert("Session Expired, Please login again");
           navigate("/");
+        } else {
+          setCardData(items.data);
         }
-        setCardData(items);
       } catch (error) {
+        alert("Server time out");
+        navigate("/");
         console.error(error);
       }
-      fetchData()
-    };})
-  useEffect(() => {
-    setCardData([
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Fancy Product",
-        isRating: false,
-        money: "$40.00 - $80.00",
-        btnContent: "View option",
-      },
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Special Item",
-        isRating: true,
-        money: "$20.00 $18.00",
-        btnContent: "Add to cart",
-      },
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Sale Item",
-        isRating: false,
-        money: "$20.00 $18.00",
-        btnContent: "Add to cart",
-      },
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Popular Item",
-        isRating: true,
-        money: "$40.00 - $80.00",
-        btnContent: "Add to cart",
-      },
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Sale Item",
-        isRating: false,
-        money: "$40.00 - $80.00",
-        btnContent: "Add to cart",
-      },
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Fancy Product",
-        isRating: false,
-        money: "$40.00 - $80.00",
-        btnContent: "view Option",
-      },
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Special Item",
-        isRating: true,
-        money: "$40.00 - $80.00",
-        btnContent: "Add to cart",
-      },
-      {
-        imageurl: "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
-        heading: "Popular Item",
-        isRating: true,
-        money: "$40.00 - $80.00",
-        btnContent: "Add to cart",
-      },
-    ]);
-  }, []);
+    };
+    fetchData();
+  },[]);
+  
   return (
     <div>
       <Header />
@@ -100,9 +45,10 @@ function Home() {
       </div>
       <div className="container">
         <div className="row">
-          {cardData.map((data) => {
+          {cardData[0] && cardData.map((data) => {
             return (
               <Card
+                key={data._id}
                 imageurl={data.imageurl}
                 heading={data.heading}
                 isRating={data.isRating}
