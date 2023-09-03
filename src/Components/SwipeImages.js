@@ -4,6 +4,8 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import 'swiper/css/autoplay';
+import SwiperCore, { Autoplay } from "swiper";
+SwiperCore.use([Autoplay]);
 
 const data = [
   "https://rukminim2.flixcart.com/fk-p-flap/1688/280/image/9b733ceda7b34ffc.jpg?q=50",
@@ -28,7 +30,7 @@ function SwipeImages() {
           depth: 100,
           modifier: 1,
         }}
-        autoplay={{ delay: 5000 }} 
+        autoplay={true}
         className="swiper_container mySwiper"
       >
         {data.map((item, index) => (
