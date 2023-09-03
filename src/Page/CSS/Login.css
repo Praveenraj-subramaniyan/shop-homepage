@@ -39,6 +39,8 @@ label {
     top: 0;
   }
   .LoginMainDiv{
-    margin-top: 10%;
-    margin-left: 30%;
+    padding-top: 10%;
+    padding-left: 30%;
+    padding-right: 10%;
+    padding-bottom: 30%;
   }

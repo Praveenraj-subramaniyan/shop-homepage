@@ -42,7 +42,7 @@ function Home() {
       <Header cart={cart}/>
       <div className="Shopinstyle bg-dark mb-5">
         <h1>Shop in style</h1>
-        <h5>With this shop hompeage template</h5>
+        <h5>Explore the great shopping experience</h5>
       </div>
       <div className="container">
         <div className="row">

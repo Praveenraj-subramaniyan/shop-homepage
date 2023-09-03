@@ -50,8 +50,8 @@ function Login() {
       }));
     }
   return (
-    <div className="LoginMainDiv">
-      <h2 className="text-primary">Shopping App</h2>
+    <div className="LoginMainDiv bg-dark">
+      <h2 className="text-light">Shopping App</h2>
       <form id="loginForm" className="loginFormcls" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -76,7 +76,7 @@ function Login() {
         </label>
         <button
           type="submit"
-          className="btn btn-primary btn-block btn-large  mt-2"
+          className="btn btn-light btn-block btn-large  mt-2"
         >
           Login
         </button>
