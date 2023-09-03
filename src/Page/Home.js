@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 
 function Home() {
   const [cardData, setCardData] = useState([]);
+  const [cart,setCart]=useState(0)
   const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +39,7 @@ function Home() {
   
   return (
     <div>
-      <Header />
+      <Header cart={cart}/>
       <div className="Shopinstyle bg-dark mb-5">
         <h1>Shop in style</h1>
         <h5>With this shop hompeage template</h5>
@@ -54,6 +55,7 @@ function Home() {
                 isRating={data.isRating}
                 money={data.money}
                 btnContent={data.btnContent}
+                setCart={setCart}
               />
             );
           })}
@@ -61,7 +63,7 @@ function Home() {
       </div>
       <footer className="mb-0 mt-5">
         <div className="bg-dark">
-          <h5 className="mb-0 mt-5">Copyright © Your Website 2023</h5>
+          <h5 className="mb-0 mt-5">Copyright © Shop in style 2023</h5>
         </div>
       </footer>
     </div>

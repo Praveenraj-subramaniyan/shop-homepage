@@ -1,6 +1,7 @@
 import React from "react";
 
-function Header() {
+function Header(data) {
+   
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -61,7 +62,7 @@ function Header() {
                   <i className="fas fa-shopping-cart"></i>
                   Cart
                   <span className="badge bg-dark text-white ms-1 rounded-pill">
-                    0
+                    {data.cart}
                   </span>
                 </button>
               </a>

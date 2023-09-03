@@ -18,7 +18,9 @@ function Card(data) {
             </div>
           )}
           <p className="card-text">{data.money}</p>
-          <a href="#" className={`btn btn-outline-dark ${!data.isRating? "mt-4 mb-3" : "mb-3" }`}>
+          <a  className={`btn btn-outline-dark ${!data.isRating? "mt-4 mb-3" : "mb-3" }`}
+         onClick={() => data.setCart((prevState) => prevState + 1)}
+          >
             {data.btnContent}
           </a>
         </div>
