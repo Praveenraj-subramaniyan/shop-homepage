@@ -22,3 +22,13 @@ footer h5{
 .fullcart{
   margin-right: 20%;
 }
+
+@media (max-width:600px) {
+  .Shopinstyle h1{
+    margin-top: 10%;
+    font-size: larger;
+  }
+  .Shopinstyle h5{
+    font-size: large;
+  }
+}

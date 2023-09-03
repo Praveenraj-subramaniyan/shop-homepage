@@ -51,8 +51,9 @@ function Login() {
     }
   return (
     <div className="LoginMainDiv bg-dark">
-      <h2 className="text-light">Shopping App</h2>
+      
       <form id="loginForm" className="loginFormcls" onSubmit={handleSubmit}>
+      <h2 className="text-light LoginMainDivh1 mb-4">Shopping App</h2>
         <input
           type="email"
           name="emailid"
