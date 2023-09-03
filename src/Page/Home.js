@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import Card from "../Card";
+import SwipeImages from "../Components/SwipeImages"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -44,6 +45,7 @@ function Home() {
         <h1>Shop in style</h1>
         <h5>Explore the great shopping experience</h5>
       </div>
+      <SwipeImages/>
       <div className="container">
         <div className="row">
           {cardData[0] && cardData.map((data) => {
